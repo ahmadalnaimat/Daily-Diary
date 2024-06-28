@@ -1,10 +1,15 @@
-﻿namespace Daily_Diary
+﻿using System;
+using System.IO;
+
+namespace DiaryManager
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string filepath = Path.Combine(Environment.CurrentDirectory, "mydiary.txt");
+            DailyDiary diary = new DailyDiary(filepath);
+            diary.Run();
         }
     }
 }
